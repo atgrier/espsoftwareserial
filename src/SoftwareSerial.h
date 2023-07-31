@@ -294,7 +294,6 @@ protected:
     int8_t m_txPin = -1;
     bool m_invert = false;
 
-private:
     // It's legal to exceed the deadline, for instance,
     // by enabling interrupts.
     void lazyDelay();
