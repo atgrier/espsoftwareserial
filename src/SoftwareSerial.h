@@ -93,12 +93,13 @@ public:
 
     // result is only defined for a valid Rx pin
     static constexpr bool hasPullUp(int8_t pin) {
-    #if defined(ESP32)
-        return !(pin >= 34 && pin <= 39);
-    #else
-        (void)pin;
-        return true;
-    #endif
+        return false;
+    // #if defined(ESP32)
+    //     return !(pin >= 34 && pin <= 39);
+    // #else
+    //     (void)pin;
+    //     return true;
+    // #endif
     }
 };
 
@@ -454,4 +455,3 @@ extern template bool circular_queue<uint32_t, EspSoftwareSerial::UARTBase*>::pus
 #endif // __GNUC__ < 12
 
 #endif // __SoftwareSerial_h
-
